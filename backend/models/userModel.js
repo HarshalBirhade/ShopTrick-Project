@@ -57,25 +57,26 @@ userSchema.methods.getJWToken = function () {
 };
 
 //Compare Password
-
 userSchema.methods.comparePassword = async function (enteredPassword) {
   return bcrypt.compare(enteredPassword, this.password);
 };
 
 // Generating Password Reset Token
 userSchema.methods.getResetPasswordToken = function () {
-  //Generating Token
+  // Generating a random token
   const resetToken = crypto.randomBytes(20).toString("hex");
 
-  //Hashing and adding resetPasswordToken to userSchema
-
+  // Hashing the resetToken and storing it in resetPasswordToken
   this.resetPasswordToken = crypto
     .createHash("sha256")
     .update(resetToken)
     .digest("hex");
 
-  this.resetPasswordToken = Date.now() + 15 * 60 * 1000;
+  // Setting an expiry time for the token (e.g., 15 minutes from now)
+  const expiresInMs = 15 * 60 * 1000; // 15 minutes in milliseconds
+  this.resetPasswordExpire = Date.now() + expiresInMs;
 
+  // Returning the original resetToken (not the hashed one)
   return resetToken;
 };
 
