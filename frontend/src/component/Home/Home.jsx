@@ -3,19 +3,25 @@ import { FaMouse } from "react-icons/fa";
 import "./home.css";
 import Product from "./Product";
 import MetaData from "../layout/MetaData";
-import { getProduct } from "../../store/actions/productAction";
+import { getProduct, clearErrors } from "../../store/actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
-import { Loader } from "../layout/Loader/Loader";
+import Loader from "../layout/Loader/Loader";
+import { useAlert } from "react-alert";
 
 const Home = () => {
+  const alert = useAlert();
   const dispatch = useDispatch();
   const { loading, error, products, productCount } = useSelector(
     (state) => state.products
   );
 
   useEffect(() => {
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors());
+    }
     dispatch(getProduct());
-  }, [dispatch]);
+  }, [dispatch, error, alert]);
 
   return (
     <>
