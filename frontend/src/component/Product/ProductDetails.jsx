@@ -11,7 +11,7 @@ import ReactStars from "react-rating-stars-component";
 import ReviewCard from "./ReviewCard.jsx";
 import Loader from "../layout/Loader/Loader";
 import { useAlert } from "react-alert";
-
+import MetaData from "../layout/MetaData";
 const ProductDetails = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
@@ -44,6 +44,8 @@ const ProductDetails = () => {
         <Loader />
       ) : (
         <>
+          <MetaData title={`${product.name}--E-Commerce`} />
+
           <div className="ProductDetails">
             <div>
               <Carousel>
