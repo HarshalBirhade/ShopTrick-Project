@@ -33,7 +33,6 @@ function LoginSignUp() {
   const { name, email, password } = user;
 
   const [avatar, setAvatar] = useState();
-
   const [avatarPreview, setAvatarPreview] = useState("Profile.png");
 
   const loginSubmit = (e) => {
@@ -134,7 +133,7 @@ function LoginSignUp() {
                     onChange={(e) => setLoginPassword(e.target.value)}
                   />
                 </div>
-                <Link to="/password/forget">Forget Password</Link>
+                <Link to="/password/forgot">Forgot Password ?</Link>
                 <input type="submit" value="login" className="loginBtn" />
               </form>
 

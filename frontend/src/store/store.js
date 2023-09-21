@@ -3,13 +3,19 @@ import {
   productReducer,
   productDetailsReducer,
 } from "./reducers/productReducer";
-import { userReducer } from "./reducers/userReducer";
+import {
+  forgotPasswordReducer,
+  profileReducer,
+  userReducer,
+} from "./reducers/userReducer";
 
 const store = configureStore({
   reducer: {
     products: productReducer,
     productDetails: productDetailsReducer,
     user: userReducer,
+    profile: profileReducer,
+    forgotPassword: forgotPasswordReducer,
   },
 });
 

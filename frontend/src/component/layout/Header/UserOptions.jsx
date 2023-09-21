@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./UserOptions.css";
 import { SpeedDial, SpeedDialAction } from "@material-ui/lab";
+import Backdrop from "@material-ui/core/Backdrop";
 import { FaPlus, FaTable, FaUser, FaMinus, FaDashcube } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
@@ -42,16 +43,20 @@ function UserOptions({ user }) {
   }
   return (
     <>
+      <Backdrop open={open} style={{ zIndex: "10" }} />
       <SpeedDial
         ariaLabel="SpeedDial tooltip example"
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}
+        style={{ zIndex: "11" }}
         open={open}
         direction="down"
-        icon={<FaPlus />}
+        className="speedDial"
+        icon={<FaPlus className="speedDialIcon" />}
       >
         {options.map((item) => (
           <SpeedDialAction
+            key={item.name}
             icon={item.icon}
             tooltipTitle={item.name}
             onClick={item.func}
