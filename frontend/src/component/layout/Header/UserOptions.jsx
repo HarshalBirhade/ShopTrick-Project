@@ -2,27 +2,42 @@ import React, { useState } from "react";
 import "./UserOptions.css";
 import { SpeedDial, SpeedDialAction } from "@material-ui/lab";
 import Backdrop from "@material-ui/core/Backdrop";
-import { FaPlus, FaTable, FaUser, FaMinus, FaDashcube } from "react-icons/fa";
+import { FaPlus } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import { useAlert } from "react-alert";
 import { logout } from "../../../store/actions/userAction";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import ListAltIcon from "@material-ui/icons/ListAlt";
+import PersonIcon from "@material-ui/icons/Person";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
+import DashboardIcon from "@material-ui/icons/Dashboard";
 
 function UserOptions({ user }) {
   const navigate = useNavigate();
   const alert = useAlert();
   const dispatch = useDispatch();
   const [open, setOpen] = useState(false);
+  const { cartItems } = useSelector((state) => state.cart);
 
   const options = [
-    { icon: <FaTable />, name: "Orders", func: orders },
-    { icon: <FaUser />, name: "Profile", func: account },
-    { icon: <FaMinus />, name: "Logout", func: logoutUser },
+    { icon: <ListAltIcon />, name: "Orders", func: orders },
+    { icon: <PersonIcon />, name: "Profile", func: account },
+    {
+      icon: (
+        <ShoppingCartIcon
+          style={{ color: cartItems.length > 0 ? "tomato" : "unset" }}
+        />
+      ),
+      name: `Cart(${cartItems.length})`,
+      func: cart,
+    },
+    { icon: <ExitToAppIcon />, name: "Logout", func: logoutUser },
   ];
 
   if (user.role === "admin") {
     options.unshift({
-      icon: <FaDashcube />,
+      icon: <DashboardIcon />,
       name: "Dashbaord",
       func: dashboard,
     });
@@ -36,6 +51,10 @@ function UserOptions({ user }) {
   }
   function account() {
     navigate("/account");
+  }
+
+  function cart() {
+    navigate("/cart");
   }
   function logoutUser() {
     dispatch(logout());
@@ -60,6 +79,7 @@ function UserOptions({ user }) {
             icon={item.icon}
             tooltipTitle={item.name}
             onClick={item.func}
+            tooltipOpen={window.innerWidth <= 600 ? true : false}
           ></SpeedDialAction>
         ))}
       </SpeedDial>
