@@ -12,7 +12,7 @@ const {
 
 router.route("/order/new").post(isAuthenticatedUser, newOrder);
 
-router.route("/order/:id").get(isAuthenticatedUser, getSingleOrder);
+router.route("/order-details/:id").get(isAuthenticatedUser, getSingleOrder);
 
 router.route("/orders/me").get(isAuthenticatedUser, myOrders);
 

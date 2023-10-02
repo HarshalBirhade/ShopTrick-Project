@@ -11,17 +11,18 @@ import {
   useStripe,
   useElements,
 } from "@stripe/react-stripe-js";
-
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./payment.css";
 import CreditCardIcon from "@material-ui/icons/CreditCard";
 import EventIcon from "@material-ui/icons/Event";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
-// import { createOrder, clearErrors } from "../../store/actions/cartAction";
+import { createOrder, clearErrors } from "../../store/actions/orderAction";
 
-const Payment = ({ history }) => {
+const Payment = () => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
 
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const alert = useAlert();
   const stripe = useStripe();
@@ -94,9 +95,9 @@ const Payment = ({ history }) => {
             status: result.paymentIntent.status,
           };
 
-          //   dispatch(createOrder(order));
+          dispatch(createOrder(order));
 
-          history.push("/success");
+          navigate("/success");
         } else {
           alert.error("There's some issue while processing payment ");
         }
@@ -110,7 +111,7 @@ const Payment = ({ history }) => {
   useEffect(() => {
     if (error) {
       alert.error(error);
-      //   dispatch(clearErrors());
+      dispatch(clearErrors());
     }
   }, [dispatch, error, alert]);
 

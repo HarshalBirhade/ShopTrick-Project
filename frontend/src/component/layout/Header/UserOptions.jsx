@@ -44,7 +44,7 @@ function UserOptions({ user }) {
   }
 
   function dashboard() {
-    navigate("/dasboard");
+    navigate("/admin/dashboard");
   }
   function orders() {
     navigate("/orders");
@@ -59,6 +59,7 @@ function UserOptions({ user }) {
   function logoutUser() {
     dispatch(logout());
     alert.success("Logout Succesfully");
+    navigate("/login");
   }
   return (
     <>

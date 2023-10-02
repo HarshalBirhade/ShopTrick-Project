@@ -10,7 +10,7 @@ const ProtectedRoute = ({ isAdmin }) => {
     return null;
   }
 
-  if (!isAuthenticated) {
+  if (isAuthenticated === false) {
     return <AuthenticatedLayout />;
   }
 

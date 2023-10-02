@@ -24,12 +24,15 @@ export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
     },
   });
 
-  localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
+  sessionStorage.setItem(
+    "cartItems",
+    JSON.stringify(getState().cart.cartItems)
+  );
 };
 
-// Load cart data from localStorage when the application starts
+// Load cart data from sessionStorage when the application starts
 export const loadCartFromStorage = () => (dispatch) => {
-  const savedCartItems = localStorage.getItem("cartItems");
+  const savedCartItems = sessionStorage.getItem("cartItems");
   if (savedCartItems) {
     const parsedCartItems = JSON.parse(savedCartItems);
     dispatch({
@@ -45,7 +48,10 @@ export const removeItemFromCart = (id) => async (dispatch, getState) => {
     type: REMOVE_CART_ITEM,
     payload: id,
   });
-  localStorage.setItem("cartItems", JSON.stringify(getState().cart.cartItems));
+  sessionStorage.setItem(
+    "cartItems",
+    JSON.stringify(getState().cart.cartItems)
+  );
 };
 
 // Save Shipping Info
@@ -55,12 +61,12 @@ export const saveShippingInfo = (data) => async (dispatch) => {
     payload: data,
   });
 
-  localStorage.setItem("shippingInfo", JSON.stringify(data));
+  sessionStorage.setItem("shippingInfo", JSON.stringify(data));
 };
 
 // Load shipping info from local storage
 export const loadShippingInfoFromStorage = () => (dispatch) => {
-  const savedShippingInfo = localStorage.getItem("shippingInfo");
+  const savedShippingInfo = sessionStorage.getItem("shippingInfo");
   if (savedShippingInfo) {
     const parsedShippingInfo = JSON.parse(savedShippingInfo);
     dispatch({
@@ -72,7 +78,7 @@ export const loadShippingInfoFromStorage = () => (dispatch) => {
 
 // Load order confirmation info from local storage
 export const loadOrderConfirmationFromStorage = () => (dispatch) => {
-  const savedOrderConfirmation = localStorage.getItem("orderConfirmation");
+  const savedOrderConfirmation = sessionStorage.getItem("orderConfirmation");
   if (savedOrderConfirmation) {
     const parsedOrderConfirmation = JSON.parse(savedOrderConfirmation);
     dispatch({
