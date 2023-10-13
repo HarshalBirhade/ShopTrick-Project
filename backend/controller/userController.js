@@ -43,8 +43,12 @@ exports.loginUser = catchAsyncError(async (req, res, next) => {
 
 // Logout User
 exports.logout = catchAsyncError(async (req, res, next) => {
-  res.clearCookie("token", {});
-
+  res.clearCookie("token", {
+    domain: ".shoptrick.onrender.com",
+    secure: true,
+    sameSite: "None",
+    path: "/api/v1",
+  });
   res.status(200).json({
     success: true,
     message: "Logged Out",

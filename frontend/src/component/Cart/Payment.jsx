@@ -17,6 +17,7 @@ import CreditCardIcon from "@material-ui/icons/CreditCard";
 import EventIcon from "@material-ui/icons/Event";
 import VpnKeyIcon from "@material-ui/icons/VpnKey";
 import { createOrder, clearErrors } from "../../store/actions/orderAction";
+import instance from "../../store/actions/axios";
 
 const Payment = () => {
   const orderInfo = JSON.parse(sessionStorage.getItem("orderInfo"));
@@ -56,7 +57,7 @@ const Payment = () => {
           "Content-Type": "application/json",
         },
       };
-      const { data } = await axios.post(
+      const { data } = await instance.post(
         "/api/v1/payment/process",
         paymentData,
         config

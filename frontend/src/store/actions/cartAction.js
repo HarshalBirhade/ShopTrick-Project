@@ -6,11 +6,11 @@ import {
   LOAD_SHIPPING_INFO_FROM_STORAGE,
   LOAD_ORDER_CONFIRMATION_FROM_STORAGE,
 } from "../constants/cartConstant";
-import axios from "axios";
+import instance from "./axios";
 
 // Add to Cart
 export const addItemsToCart = (id, quantity) => async (dispatch, getState) => {
-  const { data } = await axios.get(`/api/v1/product/${id}`);
+  const { data } = await instance.get(`/api/v1/product/${id}`);
 
   dispatch({
     type: ADD_TO_CART,

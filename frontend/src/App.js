@@ -36,14 +36,14 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import About from "./component/Layout/About/About";
 import Contact from "./component/Layout/Contact/Contact";
-import axios from "axios";
 import NotFound from "./component/Layout/NotFound/NotFound";
+import instance from "./store/actions/axios";
 
 function App() {
   const [stripeApiKey, setStripeApiKey] = useState("");
 
   async function getStripeApiKey() {
-    const { data } = await axios.get("/api/v1/stripeapikey");
+    const { data } = await instance.get("/api/v1/stripeapikey");
 
     setStripeApiKey(data.stripeApiKey);
   }

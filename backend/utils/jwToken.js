@@ -2,13 +2,18 @@
 
 const sendToken = (user, statusCode, res) => {
   const token = user.getJWToken();
+  console.log(`Token: ${token}`);
 
-  //Option for cookie
+  // Options for the cookie
   const options = {
     expires: new Date(
-      Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 100
+      Date.now() + process.env.COOKIE_EXPIRE * 24 * 60 * 60 * 1000
     ),
-    httpOnly: true,
+    // httpOnly: true,
+    secure: true,
+    sameSite: "None",
+    domain: ".shoptrick.onrender.com",
+    path: "/api/v1",
   };
 
   res.status(statusCode).cookie("token", token, options).json({
