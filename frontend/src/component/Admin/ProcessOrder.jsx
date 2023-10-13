@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
-import MetaData from "../layout/MetaData";
+import MetaData from "../Layout/MetaData";
 import { Link, useParams } from "react-router-dom";
-import { Typography } from "@material-ui/core";
 import SideBar from "./Sidebar";
 import {
   getOrderDetails,
@@ -9,7 +8,7 @@ import {
   updateOrder,
 } from "../../store/actions/orderAction";
 import { useSelector, useDispatch } from "react-redux";
-import Loader from "../layout/Loader/Loader";
+import Loader from "../Layout/Loader/Loader";
 import { useAlert } from "react-alert";
 import AccountTreeIcon from "@material-ui/icons/AccountTree";
 import { Button } from "@material-ui/core";
@@ -70,7 +69,7 @@ const ProcessOrder = () => {
             >
               <div>
                 <div className="confirmshippingArea">
-                  <Typography>Shipping Info</Typography>
+                  <p>Shipping Info</p>
                   <div className="orderDetailsContainerBox">
                     <div>
                       <p>Name:</p>
@@ -91,7 +90,7 @@ const ProcessOrder = () => {
                     </div>
                   </div>
 
-                  <Typography>Payment</Typography>
+                  <p>Payment</p>
                   <div className="orderDetailsContainerBox">
                     <div>
                       <p
@@ -115,7 +114,7 @@ const ProcessOrder = () => {
                     </div>
                   </div>
 
-                  <Typography>Order Status</Typography>
+                  <p>Order Status</p>
                   <div className="orderDetailsContainerBox">
                     <div>
                       <p
@@ -131,7 +130,7 @@ const ProcessOrder = () => {
                   </div>
                 </div>
                 <div className="confirmCartItems">
-                  <Typography>Your Cart Items:</Typography>
+                  <p>Your Cart Items:</p>
                   <div className="confirmCartItemsContainer">
                     {order.orderItems &&
                       order.orderItems.map((item) => (

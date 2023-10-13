@@ -9,9 +9,9 @@ import {
   newReview,
 } from "../../store/actions/productAction";
 import ReviewCard from "./ReviewCard.jsx";
-import Loader from "../layout/Loader/Loader";
+import Loader from "../Layout/Loader/Loader";
 import { useAlert } from "react-alert";
-import MetaData from "../layout/MetaData";
+import MetaData from "../Layout/MetaData";
 import { addItemsToCart } from "../../store/actions/cartAction";
 import { useNavigate } from "react-router-dom";
 import {
@@ -115,7 +115,7 @@ const ProductDetails = () => {
         <Loader />
       ) : (
         <>
-          <MetaData title={`${product.name}--E-Commerce`} />
+          <MetaData title={`${product.name}`} />
 
           <div className="ProductDetails">
             <div>

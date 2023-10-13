@@ -1,26 +1,29 @@
 .confirmOrderPage {
   height: 100vh;
-  background-color: white;
   display: grid;
   grid-template-columns: 6fr 3fr;
 }
 
 .confirmOrderPage > div:last-child {
-  border-left: 1px solid rgba(0, 0, 0, 0.247);
+  border-left: 1px solid #404658;
+  border-bottom: 1px solid #404658;
 }
 
 .confirmshippingArea {
   padding: 5vmax;
   padding-bottom: 0%;
+  border-top: 1px solid #404658;
 }
 
 .confirmshippingArea > p {
   font: 400 1.8vmax "Roboto";
+  color: black;
 }
 
 .confirmshippingAreaBox,
 .confirmCartItemsContainer {
   margin: 2vmax;
+  color: #314f9f;
 }
 
 .confirmshippingAreaBox > div {
@@ -29,22 +32,26 @@
 }
 
 .confirmshippingAreaBox > div > p {
-  font: 400 1vmax "Roboto";
+  font: 400 1vmax cursive;
   color: black;
+  font-weight: 100;
 }
 .confirmshippingAreaBox > div > span {
   margin: 0 1vmax;
-  font: 100 1vmax "Roboto";
-  color: #575757;
+  font: 100 1vmax cursive;
+  color: #404658;
 }
 
 .confirmCartItems > p {
   font: 400 1.8vmax "Roboto";
+  color: black;
 }
 
 .confirmCartItems {
   padding: 5vmax;
   padding-top: 2vmax;
+  border-top: 1px solid #404658;
+  border-bottom: 1px solid #404658;
 }
 
 .confirmCartItemsContainer {
@@ -54,7 +61,7 @@
 
 .confirmCartItemsContainer > div {
   display: flex;
-  font: 400 1vmax "Roboto";
+  font: 400 1vmax cursive;
   align-items: center;
   justify-content: space-between;
   margin: 2vmax 0;
@@ -65,25 +72,31 @@
 }
 
 .confirmCartItemsContainer > div > a {
-  color: #575757;
+  color: #404658;
   margin: 0 2vmax;
   width: 60%;
   text-decoration: none;
 }
 
+.confirmCartItemsContainer > div > a:hover {
+  border: 1px solid #626a77;
+}
+
 .confirmCartItemsContainer > div > span {
-  font: 100 1vmax "Roboto";
+  font: 100 1vmax cursive;
   color: #5e5e5e;
 }
 
 .orderSummary {
   padding: 7vmax;
+  border-top: 1px solid #404658;
 }
 
 .orderSummary > p {
   text-align: center;
   font: 400 1.8vmax "Roboto";
-  border-bottom: 1px solid rgba(0, 0, 0, 0.267);
+  border-bottom: 1px solid #404658;
+  color: black;
   padding: 1vmax;
   width: 100%;
   margin: auto;
@@ -92,7 +105,7 @@
 
 .orderSummary > div > div {
   display: flex;
-  font: 300 1vmax "Roboto";
+  font: 300 1vmax cursive;
   justify-content: space-between;
   margin: 2vmax 0;
 }
@@ -102,14 +115,14 @@
 
 .orderSummaryTotal {
   display: flex;
-  font: 300 1vmax "Roboto";
+  font: 300 1vmax cursive;
   justify-content: space-between;
-  border-top: 1px solid rgba(0, 0, 0, 0.363);
+  border-top: 1px solid #404658;
   padding: 2vmax 0;
 }
 
 .orderSummary > button {
-  background-color: tomato;
+  background-color: #404658;
   color: white;
   width: 100%;
   padding: 1vmax;
@@ -117,11 +130,14 @@
   margin: auto;
   cursor: pointer;
   transition: 0.5s;
-  font: 400 1vmax "Roboto";
+  font: 400 1vmax;
+  border-radius: 5px;
 }
 
 .orderSummary > button:hover {
-  background-color: rgb(192, 71, 50);
+  background-color: #626a77;
+  text-decoration: none;
+  color: white;
 }
 
 @media screen and (max-width: 600px) {
@@ -132,11 +148,11 @@
 
   .confirmOrderPage > div:last-child {
     border-left: 0;
-    border-top: 1px solid rgba(0, 0, 0, 0.247);
+    border-top: 1px solid #404658;
   }
 
   .confirmshippingArea > p {
-    font: 400 6vw "Roboto";
+    font: 400 6vw cursive;
   }
 
   .confirmshippingAreaBox > div {
@@ -145,14 +161,14 @@
   }
 
   .confirmshippingAreaBox > div > p {
-    font: 400 4vw "Roboto";
+    font: 400 4vw cursive;
   }
   .confirmshippingAreaBox > div > span {
-    font: 100 4vw "Roboto";
+    font: 100 4vw cursive;
   }
 
   .confirmCartItems > p {
-    font: 400 6vw "Roboto";
+    font: 400 6vw cursive;
   }
 
   .confirmCartItemsContainer {
@@ -160,7 +176,7 @@
   }
 
   .confirmCartItemsContainer > div {
-    font: 400 4vw "Roboto";
+    font: 400 4vw cursive;
     margin: 4vw 0;
   }
 
@@ -174,7 +190,7 @@
   }
 
   .confirmCartItemsContainer > div > span {
-    font: 100 4vw "Roboto";
+    font: 100 4vw cursive;
   }
 
   .orderSummary {
@@ -182,22 +198,22 @@
   }
 
   .orderSummary > p {
-    font: 400 6vw "Roboto";
+    font: 400 6vw cursive;
     padding: 4vw;
   }
 
   .orderSummary > div > div {
-    font: 300 4vw "Roboto";
+    font: 300 4vw cursive;
   }
 
   .orderSummaryTotal {
-    font: 300 4vw "Roboto";
+    font: 300 4vw cursive;
     padding: 5vw 0;
   }
 
   .orderSummary > button {
     padding: 4vw;
     margin: 4vw auto;
-    font: 400 4vw "Roboto";
+    font: 400 4vw cursive;
   }
 }

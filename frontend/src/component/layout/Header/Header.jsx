@@ -1,51 +1,153 @@
-import React from "react";
-import { ReactNavbar } from "overlay-navbar";
-import logo from "../../../images/logo.png";
-import { FaSearch, FaUser, FaShoppingCart } from "react-icons/fa";
-const options = {
-  burgerColorHover: "#eb4034",
-  logo,
-  logoWidth: "20vmax",
-  navColor1: "white",
-  logoHoverSize: "10px",
-  logoHoverColor: "#eb4034",
-  link1Text: "Home",
-  link2Text: "Products",
-  link3Text: "Contact",
-  link4Text: "About",
-  link1Url: "/",
-  link2Url: "/products",
-  link3Url: "/contact",
-  link4Url: "/about",
-  link1Size: "1.3vmax",
-  link1Color: "rgba(35, 35, 35,0.8)",
-  nav1justifyContent: "flex-end",
-  nav2justifyContent: "flex-end",
-  nav3justifyContent: "flex-start",
-  nav4justifyContent: "flex-start",
-  link1ColorHover: "#eb4034",
-  link1Margin: "1vmax",
-  profileIconUrl: "/login",
-  profileIconColor: "#5C5470",
-  searchIconColor: "#5C5470",
-  cartIconColor: "#5C5470",
-  profileIconColorHover: "#eb4034",
-  searchIconColorHover: "#eb4034",
-  cartIconColorHover: "#eb4034",
-  cartIconMargin: "1vmax",
-  searchIcon: true,
-  SearchIconElement: FaSearch,
-  cartIcon: true,
-  CartIconElement: FaShoppingCart,
-  profileIcon: true,
-  ProfileIconElement: FaUser,
-};
-function Header() {
+import React, { useState } from "react";
+import "./header.css";
+
+import SearchIcon from "@material-ui/icons/Search";
+import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
+import DashboardIcon from "@material-ui/icons/Dashboard";
+import ListAltIcon from "@material-ui/icons/ListAlt";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import Loader from "../Loader/Loader";
+import PersonIcon from "@material-ui/icons/Person";
+
+function Header3() {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [keyword, setKeyword] = useState("");
+
+  const searchSubmitHandler = (e) => {
+    e.preventDefault();
+    if (keyword.trim()) {
+      navigate(`/products/${keyword}`);
+    } else {
+      navigate("/products");
+    }
+  };
+
+  const { user, loading, isAuthenticated } = useSelector((state) => state.user);
   return (
     <>
-      <ReactNavbar {...options} />
+      {loading ? (
+        <Loader />
+      ) : (
+        <>
+          {" "}
+          <nav>
+            <input type="checkbox" id="check" />
+            <label htmlFor="check" className="checkbtn">
+              <i className="fas fa-bars"></i>
+            </label>
+
+            <div className="logo">
+              <Link to="/">
+                <h2>ShopTrick🛒</h2>
+              </Link>
+            </div>
+            <ul className="navUnorderLinks">
+              <div className="inputBox">
+                <form className="nav-search" onSubmit={searchSubmitHandler}>
+                  <input
+                    className="search-input"
+                    type="text"
+                    placeholder="   Search a product..."
+                    onChange={(e) => setKeyword(e.target.value)}
+                  />
+                </form>
+                <button>
+                  <SearchIcon fontSize="large" />
+                </button>
+              </div>
+              <div className="navLinks">
+                <li>
+                  <Link
+                    to="/products"
+                    className={
+                      location.pathname === "/products" ? "active" : ""
+                    }
+                  >
+                    <ShoppingBasketIcon />
+                    Products
+                  </Link>
+                </li>
+                <li>
+                  {isAuthenticated ? (
+                    <Link
+                      to="/account"
+                      className={
+                        location.pathname === "/account" ? "active" : ""
+                      }
+                    >
+                      <PersonIcon />
+                      {user.name}
+                    </Link>
+                  ) : (
+                    <Link
+                      to="/login"
+                      className={location.pathname === "/login" ? "active" : ""}
+                    >
+                      <PersonIcon />
+                      Sign in
+                    </Link>
+                  )}
+                </li>
+                {isAuthenticated && user.role === "admin" ? (
+                  <>
+                    <li>
+                      <Link
+                        to="/admin/dashboard"
+                        className={
+                          location.pathname === "/admin/dashboard"
+                            ? "active"
+                            : ""
+                        }
+                      >
+                        <DashboardIcon />
+                        Dashboard
+                      </Link>
+                    </li>
+                    <li>
+                      <Link
+                        to="/orders"
+                        className={
+                          location.pathname === "/orders" ? "active" : ""
+                        }
+                      >
+                        <ListAltIcon />
+                        Orders
+                      </Link>
+                    </li>
+                  </>
+                ) : (
+                  <li>
+                    <Link
+                      to="/orders"
+                      className={
+                        location.pathname === "/orders" ? "active" : ""
+                      }
+                    >
+                      <ListAltIcon />
+                      Orders
+                    </Link>
+                  </li>
+                )}
+
+                <li>
+                  <Link
+                    to="/cart"
+                    className={location.pathname === "/cart" ? "active" : ""}
+                  >
+                    <ShoppingCartIcon />
+                    Cart
+                  </Link>
+                </li>
+              </div>
+            </ul>
+          </nav>
+        </>
+      )}
     </>
   );
 }
 
-export default Header;
+export default Header3;

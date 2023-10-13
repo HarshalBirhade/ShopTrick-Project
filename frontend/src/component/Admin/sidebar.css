@@ -1,8 +1,8 @@
 .sidebar {
-  background-color: rgb(255, 255, 255);
   display: flex;
   flex-direction: column;
   padding: 4rem 0;
+  background-color: #a6c5cb;
 }
 
 .sidebar > a:first-child {
@@ -14,17 +14,18 @@
 }
 
 .sidebar > a > img:hover {
-  filter: drop-shadow(0 0 10px tomato);
+  filter: drop-shadow(0 0 10px #0589a3);
 }
+
 .sidebar a {
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.493);
+  color: black;
   font: 200 1rem "Roboto";
   padding: 2rem;
   transition: all 0.5s;
 }
 .sidebar a:hover {
-  color: tomato;
+  color: #626a77;
   transform: scale(1.1);
 }
 
@@ -34,8 +35,9 @@
 }
 .sidebar a > p > svg {
   margin-right: 0.5rem;
+  color: #404658;
 }
 
 .MuiTypography-root {
-  background-color: #fff !important;
+  background-color: #a6c5cb !important;
 }

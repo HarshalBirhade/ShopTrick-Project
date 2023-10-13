@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import "./ResetPassword.css";
 import { useParams } from "react-router-dom";
-import Loader from "../layout/Loader/Loader";
+import Loader from "../Layout/Loader/Loader";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, resetPassword } from "../../store/actions/userAction";
 import { useAlert } from "react-alert";
-import MetaData from "../layout/MetaData";
+import MetaData from "../Layout/MetaData";
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import LockIcon from "@material-ui/icons/Lock";
 import { useNavigate } from "react-router-dom";
@@ -56,7 +56,7 @@ const ResetPassword = () => {
           <MetaData title="Change Password" />
           <div className="resetPasswordContainer">
             <div className="resetPasswordBox">
-              <h2 className="resetPasswordHeading">Update Profile</h2>
+              <h2 className="resetPasswordHeading">Create Passward</h2>
 
               <form
                 className="resetPasswordForm"
@@ -84,7 +84,7 @@ const ResetPassword = () => {
                 </div>
                 <input
                   type="submit"
-                  value="Update"
+                  value="Create"
                   className="resetPasswordBtn"
                 />
               </form>

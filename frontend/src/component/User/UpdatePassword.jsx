@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./UpdatePassword.css";
-import Loader from "../layout/Loader/Loader";
+import Loader from "../Layout/Loader/Loader";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { clearErrors, updatePassword } from "../../store/actions/userAction";
 import { useAlert } from "react-alert";
 import { UPDATE_PASSWORD_RESET } from "../../store/constants/userConstant";
-import MetaData from "../layout/MetaData";
+import MetaData from "../Layout/MetaData";
 
 import LockOpenIcon from "@material-ui/icons/LockOpen";
 import LockIcon from "@material-ui/icons/Lock";

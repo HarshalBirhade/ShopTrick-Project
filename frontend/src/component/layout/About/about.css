@@ -1,0 +1,52 @@
+/* about.css */
+
+.aboutContainer {
+  display: flex;
+
+  flex-direction: row-reverse; /* Reverse the order of elements (heroImg on the right) */
+  justify-content: space-between; /* Create space between the elements */
+  align-items: center; /* Center vertically within the container */
+}
+
+.brandName span {
+  color: #00d5ff;
+  font-weight: bold;
+  font-size: 30px;
+  text-shadow: 2px 2px 4px rgb(0, 0, 0), -2px -2px 4px rgb(0, 0, 0);
+}
+
+.heroImg {
+  width: 25vmax;
+  height: 25vmax;
+  margin-right: 10vmax;
+  background-image: url("../../../images/about2.png"); /* Add your hero image URL here */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.details {
+  width: 45%;
+  padding: 1vmax;
+  margin-left: 10vmax;
+  border-radius: 5px;
+  border: 2px solid #404658;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 525px) {
+  /* Corrected the media query with 'px' */
+  .aboutContainer {
+    flex-direction: column;
+    align-items: center; /* Center elements vertically in the column Layout */
+  }
+
+  .heroImg {
+    width: 40vmax; /* Image takes 100% width in the column Layout */
+    height: 40vmax; /* Maintain the aspect ratio */
+  }
+
+  .details {
+    width: 100%; /* Details take 100% width in the column Layout */
+  }
+}

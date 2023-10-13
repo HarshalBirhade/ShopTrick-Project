@@ -4,10 +4,14 @@
 
 .MuiStepConnector-root {
   height: 1px;
-  background-color: rgba(0, 0, 0, 0.349);
+  background-color: #404658;
 }
 
 .MuiStepConnector-active,
 .MuiStepConnector-completed {
-  background-color: tomato;
+  background-color: #404658;
+}
+
+.stepper {
+  background-color: #85bcc7;
 }

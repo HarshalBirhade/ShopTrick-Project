@@ -6,7 +6,7 @@ import {
   saveShippingInfo,
   loadShippingInfoFromStorage,
 } from "../../store/actions/cartAction";
-import MetaData from "../layout/MetaData";
+import MetaData from "../Layout/MetaData";
 import PinDropIcon from "@material-ui/icons/PinDrop";
 import HomeIcon from "@material-ui/icons/Home";
 import LocationCityIcon from "@material-ui/icons/LocationCity";
@@ -52,9 +52,7 @@ const Shipping = () => {
   return (
     <>
       <MetaData title="Shipping Details" />
-
       <CheckoutSteps activeStep={0} />
-
       <div className="shippingContainer">
         <div className="shippingBox">
           <h2 className="shippingHeading">Shipping Details</h2>

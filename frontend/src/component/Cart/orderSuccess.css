@@ -10,26 +10,33 @@
 }
 .orderSuccess > svg {
   font-size: 7vmax;
-  color: tomato;
+  color: #404658;
 }
 .orderSuccess > p {
   font-size: 2vmax;
+  color: #404658;
 }
 .orderSuccess > a {
-  background-color: rgb(51, 51, 51);
+  background-color: #404658;
   color: white;
   border: none;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.508);
   padding: 1vmax 3vmax;
   cursor: pointer;
-  font: 400 1vmax "Roboto";
+  font: 400 1vmax;
   text-decoration: none;
   margin: 2vmax;
+}
+
+.orderSuccess > a:hover {
+  background-color: #626a77;
 }
 
 @media screen and (max-width: 600px) {
   .orderSuccess > a {
     padding: 3vw 6vw;
-    font: 400 4vw "Roboto";
+    font: 400 4vw cursive;
     margin: 2vmax;
   }
 

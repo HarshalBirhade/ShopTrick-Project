@@ -1,21 +1,26 @@
+/* Products Heading */
 .productsHeading {
   margin: 2vmax auto;
   width: 15vw;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+  border-bottom: 1px solid #404658;
   padding: 2vmax;
-  color: rgba(0, 0, 0, 0.678);
+  color: #404658;
   font: 500 1.5vmax "Roboto";
   text-align: center;
 }
 
+/* Products Container */
 .products {
   display: flex;
   flex-wrap: wrap;
   padding: 0 5vmax;
   justify-content: center;
+  margin-top: -3vmax;
   min-height: 30vh;
+  background-color: #a6c5cb;
 }
 
+/* Pagination */
 .paginationBox {
   display: flex;
   justify-content: center;
@@ -29,13 +34,14 @@
 }
 
 .page-item {
-  background-color: rgb(255, 255, 255);
   list-style: none;
-  border: 1px solid rgba(0, 0, 0, 0.178);
+  border: 1px solid #404658;
   padding: 1vmax 1.5vmax;
   transition: all 0.3s;
   cursor: pointer;
+  background-color: #dad6d6;
 }
+
 .page-item:first-child {
   border-radius: 5px 0 0 5px;
 }
@@ -43,67 +49,82 @@
 .page-item:last-child {
   border-radius: 0 5px 5px 0;
 }
+
 .page-link {
   text-decoration: none;
   font: 300 0.7vmax "Roboto";
-  color: rgb(80, 80, 80);
+  color: black;
   transition: all 0.3s;
 }
 
 .page-item:hover {
-  background-color: rgb(230, 230, 230);
+  background-color: #626a77;
 }
 
 .page-item:hover .page-link {
-  color: rgb(0, 0, 0);
+  color: black;
 }
 
 .pageItemActive {
-  background-color: tomato;
+  background-color: #404658;
 }
 
 .pageLinkActive {
   color: white;
 }
 
+/* Filter Box */
 .filterBox {
-  width: 10vmax;
-  position: absolute;
-  top: 10vmax;
-  left: 4vmax;
+  width: 20vmax;
+  position: fixed;
+  top: 50%;
+  left: calc(100% - 23vmax);
+  transform: translateY(-50%);
+  background-color: white;
+  padding: 2vmax;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
 }
 
-.categoryBox {
+.categoryBox ul {
   padding: 0%;
+  margin-right: 1vmax;
+}
+
+.filterBox p {
+  font-weight: 500;
+  color: #314f9f;
 }
 
 .category-link {
   list-style: none;
-  color: rgba(0, 0, 0, 0.61);
+  color: black;
   font: 400 0.8vmax "Roboto";
   margin: 0.4vmax;
   cursor: pointer;
   transition: all 0.5s;
 }
+
 .category-link:hover {
-  color: tomato;
+  color: #626a77;
+  text-decoration: underline;
 }
 
-.filterBox > fieldset {
-  border: 1px solid rgba(0, 0, 0, 0.329);
+fieldset {
+  border: none;
 }
 
 @media screen and (max-width: 600px) {
   .filterBox {
-    width: 20vmax;
-    position: static;
-    margin: auto;
+    width: 90%;
+    left: 5%;
+  }
+
+  .filterBox p {
+    font-size: 1.5vmax;
   }
 
   .page-link {
     font: 300 1.7vmax "Roboto";
-  }
-  .category-link {
-    font: 400 1.8vmax "Roboto";
   }
 }

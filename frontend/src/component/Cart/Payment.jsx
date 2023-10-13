@@ -1,8 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import CheckoutSteps from "../Cart/CheckoutSteps";
 import { useSelector, useDispatch } from "react-redux";
-import MetaData from "../layout/MetaData";
-import { Typography } from "@material-ui/core";
+import MetaData from "../Layout/MetaData";
 import { useAlert } from "react-alert";
 import {
   CardNumberElement,
@@ -121,7 +120,7 @@ const Payment = () => {
       <CheckoutSteps activeStep={2} />
       <div className="paymentContainer">
         <form className="paymentForm" onSubmit={(e) => submitHandler(e)}>
-          <Typography>Card Info</Typography>
+          <p>Card Info</p>
           <div>
             <CreditCardIcon />
             <CardNumberElement className="paymentInput" />

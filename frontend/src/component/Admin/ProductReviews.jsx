@@ -9,7 +9,7 @@ import {
 } from "../../store/actions/productAction";
 import { useAlert } from "react-alert";
 import { Button } from "@material-ui/core";
-import MetaData from "../layout/MetaData";
+import MetaData from "../Layout/MetaData";
 import DeleteIcon from "@material-ui/icons/Delete";
 import Star from "@material-ui/icons/Star";
 
@@ -130,7 +130,7 @@ const ProductReviews = () => {
 
   return (
     <>
-      <MetaData title={`ALL REVIEWS - Admin`} />
+      <MetaData title={`All Reviews - Admin`} />
 
       <div className="dashboard">
         <SideBar />

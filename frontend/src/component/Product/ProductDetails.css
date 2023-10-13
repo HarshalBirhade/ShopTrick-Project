@@ -1,5 +1,5 @@
 .ProductDetails {
-  background-color: rgb(255, 255, 255);
+  background-color: #85bcc7;
   width: 100vw;
   max-width: 100%;
   padding: 6vmax;
@@ -15,7 +15,8 @@
   align-items: center;
   padding: 2vmax;
   box-sizing: border-box;
-  border: 1px solid white;
+  border: 1px solid #404658;
+  background-color: #dad6d6;
 }
 
 .ProductDetails > div:last-child {
@@ -23,15 +24,17 @@
 }
 .CarouselImage {
   width: 20vmax;
+  border: 3px solid #404658;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
 .detailsBlock-1 > h2 {
-  color: rgb(54, 54, 54);
+  color: #404658;
   font: 600 1.6vmax "Roboto";
 }
 
 .detailsBlock-1 > p {
-  color: rgba(54, 54, 54, 0.582);
+  color: #314f9f;
   font: 200 0.6vmax cursive;
 }
 
@@ -39,15 +42,15 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  border-top: 1px solid rgba(0, 0, 0, 0.205);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+  border-top: 1px solid #404658;
+  border-bottom: 1px solid #404658;
   width: 70%;
   padding: 1vmax 0;
 }
 
 .detailsBlock-2-span {
   font: 200 0.8vmax cursive;
-  color: rgba(0, 0, 0, 0.699);
+  color: #404658;
 }
 
 .detailsBlock-3 {
@@ -55,7 +58,7 @@
 }
 
 .detailsBlock-3 > h1 {
-  color: rgba(17, 17, 17, 0.795);
+  color: #314f9f;
   font: 400 1.8vmax "Franklin Gothic Medium";
   margin: 1vmax 0;
 }
@@ -66,14 +69,15 @@
 
 .detailsBlock-3-1-1 > button {
   border: none;
-  background-color: rgba(0, 0, 0, 0.616);
   padding: 0.5vmax;
   cursor: pointer;
   color: white;
   transition: all 0.5s;
+  background-color: #404658;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 .detailsBlock-3-1-1 > button:hover {
-  background-color: rgba(0, 0, 0, 0.767);
+  background-color: #626a77;
 }
 
 .detailsBlock-3-1-1 > input {
@@ -84,6 +88,7 @@
   outline: none;
   font: 400 0.8vmax "Roboto";
   color: rgba(0, 0, 0, 0.74);
+  background-color: #becdd7;
 }
 
 .detailsBlock-3-1 > button:last-child {
@@ -91,7 +96,8 @@
   cursor: pointer;
   color: white;
   transition: all 0.5s;
-  background-color: tomato;
+  background-color: #404658;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
   font: 500 0.7vmax "Roboto";
   border-radius: 20px;
   padding: 0.5vmax 2vmax;
@@ -100,31 +106,31 @@
 }
 
 .detailsBlock-3-1 > button:last-child:hover {
-  background-color: rgb(214, 84, 61);
+  background-color: #626a77;
 }
 
 .detailsBlock-3 > p {
-  border-top: 1px solid rgba(0, 0, 0, 0.205);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.205);
+  border-top: 1px solid #404658;
+  border-bottom: 1px solid #404658;
   padding: 1vmax 0;
-  color: rgba(0, 0, 0, 0.651);
+  color: #404658;
   font: 400 1vmax "Roboto";
   margin: 1vmax 0;
 }
 
 .detailsBlock-4 {
-  color: rgba(0, 0, 0, 0.897);
+  color: black;
   font: 500 1.2vmax sans-serif;
 }
 
 .detailsBlock-4 > p {
-  color: rgba(0, 0, 0, 0.534);
+  color: #314f9f;
   font: 300 0.8vmax sans-serif;
 }
 
 .submitReview {
   border: none;
-  background-color: tomato;
+  background-color: #404658;
   font: 500 0.7vmax "Roboto";
   border-radius: 20px;
   padding: 0.6vmax 2vmax;
@@ -133,10 +139,11 @@
   cursor: pointer;
   transition: all 0.5s;
   outline: none;
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
 }
 .submitReview:hover {
-  background-color: rgb(197, 68, 45);
-  transform: scale(1.1);
+  background-color: #626a77;
+  color: white;
 }
 
 .submitDialog {
@@ -149,13 +156,15 @@
   outline: none;
   padding: 1rem;
   font: 300 1rem "Roboto";
+  background-color: #becdd7;
+  border: 1px solid #404658;
 }
 
 .reviewsHeading {
-  color: #000000be;
+  color: #404658;
   font: 500 1.4vmax "Roboto";
   text-align: center;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.226);
+  border-bottom: 1px solid #404658;
   padding: 1vmax;
   width: 20vmax;
   margin: auto;
@@ -168,10 +177,9 @@
 
 .reviewCard {
   flex: none;
-
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.226);
-  border: 1px solid rgba(56, 56, 56, 0.116);
-  width: 30vmax;
+  background-color: #dad6d6;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.226);
+  width: 20vmax;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -182,18 +190,18 @@
   width: 5vmax;
 }
 .reviewCard > p {
-  color: rgba(0, 0, 0, 0.836);
+  color: #314f9f;
   font: 600 0.9vmax "Roboto";
 }
 .reviewCardComment {
-  color: rgba(0, 0, 0, 0.445);
+  color: black;
   font: 300 0.8vmax cursive;
 }
 
 .noReviews {
   font: 400 1.3vmax "Gill Sans";
   text-align: center;
-  color: rgba(0, 0, 0, 0.548);
+  color: #404658;
 }
 
 @media screen and (max-width: 600px) {

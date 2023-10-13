@@ -1,7 +1,7 @@
 .productReviewsContainer {
   width: 100%;
   box-sizing: border-box;
-  background-color: rgb(255, 255, 255);
+  background-color: #85bcc7;
   border-left: 1px solid rgba(0, 0, 0, 0.158);
   height: 100vh;
 }
@@ -13,11 +13,11 @@
   align-items: center;
   margin: auto;
   padding: 3vmax;
-  background-color: white;
+  background-color: #85bcc7;
 }
 
 .productReviewsFormHeading {
-  color: rgba(0, 0, 0, 0.733);
+  color: #404658;
   font: 300 2rem "Roboto";
   text-align: center;
 }
@@ -37,13 +37,14 @@
   border-radius: 4px;
   font: 300 0.9vmax cursive;
   outline: none;
+  background-color: #becdd7;
 }
 
 .productReviewsForm > div > svg {
   position: absolute;
   transform: translateX(1vmax);
   font-size: 1.6vmax;
-  color: rgba(0, 0, 0, 0.623);
+  color: #404658;
 }
 
 @media screen and (max-width: 600px) {

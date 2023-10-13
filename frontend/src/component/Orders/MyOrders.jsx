@@ -3,11 +3,10 @@ import { DataGrid } from "@material-ui/data-grid";
 import "./myOrders.css";
 import { useSelector, useDispatch } from "react-redux";
 import { clearErrors, myOrders } from "../../store/actions/orderAction";
-import Loader from "../layout/Loader/Loader";
+import Loader from "../Layout/Loader/Loader";
 import { Link } from "react-router-dom";
 import { useAlert } from "react-alert";
-import Typography from "@material-ui/core/Typography";
-import MetaData from "../layout/MetaData";
+import MetaData from "../Layout/MetaData";
 import LaunchIcon from "@material-ui/icons/Launch";
 
 const MyOrders = () => {
@@ -34,10 +33,10 @@ const MyOrders = () => {
     },
     {
       field: "itemsQty",
-      headerName: "Items Qty",
+      headerName: "Items",
       type: "number",
       minWidth: 150,
-      flex: 0.3,
+      flex: 0.4,
     },
 
     {
@@ -45,12 +44,12 @@ const MyOrders = () => {
       headerName: "Amount",
       type: "number",
       minWidth: 270,
-      flex: 0.5,
+      flex: 0.6,
     },
 
     {
       field: "actions",
-      flex: 0.3,
+      flex: 0.4,
       headerName: "Actions",
       minWidth: 150,
       type: "number",
@@ -102,7 +101,7 @@ const MyOrders = () => {
             autoHeight
           />
 
-          <Typography id="myOrdersHeading">{user.name}'s Orders</Typography>
+          <p id="myOrdersHeading">{user.name}'s Orders</p>
         </div>
       )}
     </>

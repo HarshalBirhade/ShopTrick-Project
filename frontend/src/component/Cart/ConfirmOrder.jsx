@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import CheckoutSteps from "../Cart/CheckoutSteps";
 import { useSelector, useDispatch } from "react-redux";
-import MetaData from "../layout/MetaData";
+import MetaData from "../Layout/MetaData";
 import "./ConfirmOrder.css";
 import { Link } from "react-router-dom";
-import { Typography } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 import { loadOrderConfirmationFromStorage } from "../../store/actions/cartAction";
 
@@ -52,7 +51,7 @@ const ConfirmOrder = () => {
       <div className="confirmOrderPage">
         <div>
           <div className="confirmshippingArea">
-            <Typography>Shipping Info</Typography>
+            <p className="subTitle">Shipping Info:</p>
             <div className="confirmshippingAreaBox">
               <div>
                 <p>Name:</p>
@@ -69,7 +68,7 @@ const ConfirmOrder = () => {
             </div>
           </div>
           <div className="confirmCartItems">
-            <Typography>Your Cart Items:</Typography>
+            <p>Your Cart Items:</p>
             <div className="confirmCartItemsContainer">
               {cartItems &&
                 cartItems.map((item) => (
@@ -89,7 +88,7 @@ const ConfirmOrder = () => {
         </div>
         <div>
           <div className="orderSummary">
-            <Typography>Order Summary</Typography>
+            <p>Order Summary</p>
             <div>
               <div>
                 <p>Subtotal:</p>

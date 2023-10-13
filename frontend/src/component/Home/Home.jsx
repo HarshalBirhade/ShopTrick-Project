@@ -1,13 +1,11 @@
 import React, { useEffect } from "react";
-import { FaMouse } from "react-icons/fa";
 import "./home.css";
 import Product from "./Product";
-import MetaData from "../layout/MetaData";
+import MetaData from "../Layout/MetaData";
 import { getProduct, clearErrors } from "../../store/actions/productAction";
 import { useSelector, useDispatch } from "react-redux";
-import Loader from "../layout/Loader/Loader";
+import Loader from "../Layout/Loader/Loader";
 import { useAlert } from "react-alert";
-
 const Home = () => {
   const alert = useAlert();
   const dispatch = useDispatch();
@@ -27,16 +25,9 @@ const Home = () => {
         <Loader />
       ) : (
         <>
-          <MetaData title="E-COMMERCE" />
+          <MetaData title="ShopTrick-Ecommerce" />
           <div className="banner">
-            <p>Welcome to E-commerce</p>
-            <h1>Find Amazing Producs Below </h1>
-
-            <a href="#container">
-              <button>
-                Scroll <FaMouse />
-              </button>
-            </a>
+            <h1>Welcome ! The e-commerce platform that cares </h1>
           </div>
 
           <h2 className="homeHeading">Featured Product</h2>
